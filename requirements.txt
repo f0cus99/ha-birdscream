@@ -1,0 +1,5 @@
+tensorflow
+tensorflow-hub
+numpy
+paho-mqtt
+requests

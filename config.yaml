@@ -1,0 +1,24 @@
+name: Bird Scream Detector
+version: "1.0.0"
+slug: bird_scream_detector
+description: Detects bird screams via RTSP and sends MQTT events
+arch:
+  - amd64
+  - armv7
+  - arm64
+startup: services
+boot: auto
+options:
+  rtsp_url: "rtsp://user:password@192.168.1.100:554/live"
+  mqtt_broker: "homeassistant.local"
+  mqtt_port: 1883
+  mqtt_topic: "home/bird_scream/detected"
+  score_threshold: 0.35
+  min_seconds_between_events: 10
+schema:
+  rtsp_url: str
+  mqtt_broker: str
+  mqtt_port: int
+  mqtt_topic: str
+  score_threshold: float
+  min_seconds_between_events: int
